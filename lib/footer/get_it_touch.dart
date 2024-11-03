@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../home/constant.dart';
+import '../home/color_constant.dart';
 import '../models/get_in_touch_model.dart';
 import 'address_tile.dart';
 

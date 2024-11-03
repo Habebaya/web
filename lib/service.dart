@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/home/section_title.dart';
-import 'package:turn_digital_dashboard_test/home/constant.dart';
+import 'package:turn_digital_dashboard_test/home/color_constant.dart';
 import 'package:turn_digital_dashboard_test/home/responsive.dart';
 
 class OurService extends StatelessWidget {

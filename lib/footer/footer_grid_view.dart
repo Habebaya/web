@@ -6,7 +6,6 @@ import '../home/responsive.dart';
 
 class FooterGridView extends StatelessWidget {
   List<FooterModel> footerGridInfo = [];
-
   double childAspectRatio;
   double crossAxisSpacing;
   double mainAxisSpacing;

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/footer/footer_grid_view.dart';
 import 'package:turn_digital_dashboard_test/footer/footer_td_logo.dart';
 import 'package:turn_digital_dashboard_test/footer/get_it_touch.dart';
-import 'package:turn_digital_dashboard_test/home/constant.dart';
+import 'package:turn_digital_dashboard_test/home/color_constant.dart';
+import 'package:turn_digital_dashboard_test/home/constants.dart';
 import 'package:turn_digital_dashboard_test/home/responsive.dart';
 import 'package:turn_digital_dashboard_test/models/foaterr_content_model.dart';
 import 'package:turn_digital_dashboard_test/models/footer_model.dart';
@@ -11,27 +12,28 @@ import 'package:turn_digital_dashboard_test/models/get_in_touch_model.dart';
 class Footer extends StatelessWidget {
   Footer({super.key});
 
-  List<FooterModel> footerList = [
-    FooterModel(title: "CraftShips", subTitles: [
-      FooterContentModel(clickable: false, subTitle: "Services"),
-      FooterContentModel(clickable: false, subTitle: "Offering"),
-      FooterContentModel(clickable: false, subTitle: "Engagement")
-    ]),
-    FooterModel(title: "Pride", subTitles: [
-      FooterContentModel(clickable: false, subTitle: "Clients"),
-      FooterContentModel(clickable: false, subTitle: "Recognition"),
-    ]),
-    FooterModel(title: "DNA", subTitles: [
-      FooterContentModel(clickable: false, subTitle: "Culture"),
-      FooterContentModel(clickable: false, subTitle: "Behind The Action"),
-      FooterContentModel(clickable: false, subTitle: "Family"),
-    ]),
-    FooterModel(title: "", subTitles: [
-      FooterContentModel(clickable: true, subTitle: "Technology"),
-      FooterContentModel(clickable: true, subTitle: "Careers")
-    ]),
-
-  ];
+  // List<FooterModel> footerList = [
+  //   FooterModel(title: "CraftShips",isMainTitle: true, subTitles: [
+  //     FooterContentModel(isMainTitle: false, subTitle: "Services"),
+  //     FooterContentModel(isMainTitle: false, subTitle: "Offering"),
+  //     FooterContentModel(isMainTitle: false, subTitle: "Engagement")
+  //   ]),
+  //   FooterModel(title: "Pride", isMainTitle: true,subTitles: [
+  //     FooterContentModel(isMainTitle: false, subTitle: "Clients"),
+  //     FooterContentModel(isMainTitle: false, subTitle: "Recognition"),
+  //     FooterContentModel(isMainTitle: true, subTitle: "Careers")
+  //
+  //   ]),
+  //   FooterModel(title: "DNA",isMainTitle: true, subTitles: [
+  //     FooterContentModel(isMainTitle: false, subTitle: "Culture"),
+  //     FooterContentModel(isMainTitle: false, subTitle: "Behind The Action"),
+  //     FooterContentModel(isMainTitle: false, subTitle: "Family"),
+  //     FooterContentModel(isMainTitle: true, subTitle: "Technology"),
+  //
+  //   ]),
+  //
+  //
+  // ];
 
   GetInTouchModel getItTouch = GetInTouchModel(
       title: "Get in touch",
@@ -55,11 +57,11 @@ class Footer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (Responsive.isDesktop(context))
-                  const Expanded(flex: 2, child: FooterTdLogo()),
+                  const Expanded(flex: 1, child: FooterTdLogo()),
                 Expanded(
                     flex: 2,
                     child: FooterGridView(
-                      footerGridInfo: footerList,
+                      footerGridInfo: Constants.footer,
                       childAspectRatio: 1,
                       mainAxisSpacing: 0,
                       crossAxisSpacing: 0,

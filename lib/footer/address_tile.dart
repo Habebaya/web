@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:turn_digital_dashboard_test/home/constant.dart';
+import 'package:turn_digital_dashboard_test/home/color_constant.dart';
 
 class AddressTile extends StatelessWidget {
   final String address;

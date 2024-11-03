@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'constant.dart';
+import 'color_constant.dart';
 
 class TdLogo extends StatelessWidget {
 

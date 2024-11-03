@@ -3,7 +3,7 @@ import 'package:turn_digital_dashboard_test/home/responsive.dart';
 import 'package:turn_digital_dashboard_test/home/section_title.dart';
 import 'package:turn_digital_dashboard_test/shares/app_button.dart';
 
-import 'constant.dart';
+import 'color_constant.dart';
 
 class TechnologyWidget extends StatelessWidget {
   TechnologyWidget({super.key});

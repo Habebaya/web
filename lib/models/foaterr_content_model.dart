@@ -1,9 +1,11 @@
 class FooterContentModel {
-  bool? clickable;
   String subTitle;
+  bool isMainTitle;
+
 
   FooterContentModel({
-    required this.clickable,
     required this.subTitle,
+    required this.isMainTitle,
+
   });
 }

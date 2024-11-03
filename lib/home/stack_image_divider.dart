@@ -20,6 +20,7 @@ class StackImageDivider extends StatelessWidget {
     return SizedBox(
       height: Responsive.isDesktop(context)?1000: mobileHeight,
       width: double.infinity,
+
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [

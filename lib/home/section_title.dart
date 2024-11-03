@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/home/responsive.dart';
 import 'package:turn_digital_dashboard_test/shares/app_button.dart';
 
-import 'constant.dart';
+import 'color_constant.dart';
 
 class SectionTitle extends StatelessWidget {
   String title;

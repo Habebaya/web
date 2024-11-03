@@ -3,7 +3,11 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'dart:ui_web' as ui;
 import 'package:blur/blur.dart';
+import 'package:flutter/rendering.dart';
 import 'package:turn_digital_dashboard_test/home/responsive.dart';
+import 'package:turn_digital_dashboard_test/home/td_logo.dart';
+
+import 'home/constants.dart';
 
 class HeaderVideoEmbed extends StatefulWidget {
   @override
@@ -11,6 +15,8 @@ class HeaderVideoEmbed extends StatefulWidget {
 }
 
 class _HeaderVideoEmbedState extends State<HeaderVideoEmbed> {
+  int? hoveredIndex;
+  bool isHovered = false;
 
   @override
   void initState() {
@@ -31,7 +37,8 @@ class _HeaderVideoEmbedState extends State<HeaderVideoEmbed> {
         ..preload = 'auto'
         ..style.width = '100%' // Set the video width
         ..style.height = 'auto' // Set the video height
-        ..style.position = 'relative' //  Elements are positioned according to the normal flow of the document,
+        ..style.position =
+            'relative' //  Elements are positioned according to the normal flow of the document,
         ..style.bottom = '0px';
 
       return videoElement;
@@ -52,7 +59,8 @@ class _HeaderVideoEmbedState extends State<HeaderVideoEmbed> {
         ..preload = 'auto'
         ..style.width = '100%' // Set the video width
         ..style.height = 'auto' // Set the video height
-        ..style.position = 'relative' //  Elements are positioned according to the normal flow of the document,
+        ..style.position =
+            'relative' //  Elements are positioned according to the normal flow of the document,
         ..style.bottom = '0px';
 
       return videoElement;
@@ -63,7 +71,7 @@ class _HeaderVideoEmbedState extends State<HeaderVideoEmbed> {
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(
+    return Stack(
       children: [
         Blur(
           blur: 1.5,
@@ -109,6 +117,7 @@ class _HeaderVideoEmbedState extends State<HeaderVideoEmbed> {
             ],
           ),
         ),
+
       ],
     );
   }

@@ -10,23 +10,22 @@ class VideoSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final reveal = (scrollController.offset) / 300;
 
-      return LayoutBuilder(
-        builder: (context, constraints) {
-          return  Stack(
-            children: [
-              // Background image that reveals as you scroll
-
-              Positioned(
-                  top: -(scrollController.offset/300) * 200,
-                  // Move up the image based on scroll
-                  left: 0,
-                  right: 0,
-                  height: constraints.maxHeight,
-                  child: HeaderVideoEmbed()),
-            ],
-          );
-        },
-      );
-    }
+        return Stack(
+          children: [
+            Positioned(
+                top: -reveal * 200,
+                // Move up the image based on scroll
+                left: 0,
+                right: 0,
+                height: constraints.maxHeight,
+                child: HeaderVideoEmbed()),
+          ],
+        );
+      },
+    );
   }
+}
