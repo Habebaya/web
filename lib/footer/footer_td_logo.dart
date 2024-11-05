@@ -19,14 +19,14 @@ class FooterTdLogo extends StatelessWidget {
           "TURN DIGITAL",
           style: TextStyle(
               fontSize: 24,
-              color: ConstantColor.textColor,
+              color: ConstantColor.titleBlackColor,
               fontWeight: FontWeight.w700,height: 0.9),
         ),
         Text(
           "TAILORING DIGITAL",
           style: TextStyle(
               fontSize: 14,
-              color: ConstantColor.textColor,
+              color: ConstantColor.titleBlackColor,
               fontWeight: FontWeight.w400),
         )
       ],

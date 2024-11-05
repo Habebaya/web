@@ -22,8 +22,7 @@ class TechnologyWidget extends StatelessWidget {
               title: "Technology",
               description:
               "The best technology\nfoundation and engines",
-              includeButton: false,
-              descriptionColor: Colors.black,
+
             ),
             const SizedBox(
               height: 30,

@@ -22,8 +22,6 @@ class ClientWidget extends StatelessWidget {
               title: "Client",
               description:
                   "Proudly working with great\n people across the globe",
-              includeButton: false,
-              descriptionColor: Colors.black,
             ),
             const SizedBox(
               height: 30,

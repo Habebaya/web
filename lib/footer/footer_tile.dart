@@ -23,7 +23,7 @@ class FooterTile extends StatelessWidget {
               footerGridInfo.title!, // Dynamic text
               style: const TextStyle(
                   fontSize: 20,
-                  color: ConstantColor.textColor,
+                  color: ConstantColor.titleBlackColor,
                   fontWeight: FontWeight.w700),
             ),
           ),
@@ -44,11 +44,11 @@ class FooterTile extends StatelessWidget {
                       style: item.isMainTitle
                           ? const TextStyle(
                               fontSize: 20,
-                              color: ConstantColor.textColor,
+                              color: ConstantColor.titleBlackColor,
                               fontWeight: FontWeight.w700)
                           : const TextStyle(
                               fontSize: 16,
-                              color: ConstantColor.textColor,
+                              color: ConstantColor.titleBlackColor,
                               fontWeight: FontWeight.w400),
                     ),
                   ),

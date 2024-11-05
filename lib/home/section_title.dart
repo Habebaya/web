@@ -1,66 +1,75 @@
 import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/home/responsive.dart';
-import 'package:turn_digital_dashboard_test/shares/app_button.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'color_constant.dart';
 
 class SectionTitle extends StatelessWidget {
   String title;
   String description;
-  String? buttonTitle;
-  bool? includeButton;
-  Color? descriptionColor;
+  bool? isOffering;
 
-  SectionTitle(
-      {super.key,
-      required this.title,
-      required this.description,
-        this.descriptionColor,
-       this.buttonTitle,this.includeButton = true});
+  SectionTitle({
+    super.key,
+    required this.title,
+    required this.description,
+    this.isOffering = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     if (Responsive.isDesktop(context)) {
-      return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      return Column(
+          crossAxisAlignment: isOffering!
+              ? CrossAxisAlignment.start
+              : CrossAxisAlignment.center,
           children: [
-            Text(
-              title,
-              style: const TextStyle(
-                fontWeight: FontWeight.w400,
-                color: ConstantColor.primaryColor,
-                fontSize: 44,
-              ),
+            isOffering!
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          title,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              color: ConstantColor.blackColor,
+                              fontSize: 60),
+                        ),
+                      ),
+                      // if(isOffering!)
+                      Expanded(
+                          flex: 2,
+                          child: SvgPicture.asset(
+                              "assets/icon/arrow_offering.svg")),
+                    ],
+                  )
+                : Center(
+                    child: Text(
+                      title,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: ConstantColor.blackColor,
+                          fontSize: 60),
+                    ),
+                  ),
+            SizedBox(
+              height: isOffering! ? 24 : 10,
             ),
-            if(includeButton!)
-
-              AppButton(
-                width: 155,
-                height: 46,
-                buttonColor: ConstantColor.primaryColor,
-                hoverColor: Colors.transparent,
-                hoverBorder: ConstantColor.primaryColor,
-                buttonTitle: buttonTitle!,
-                buttonTitleFontSize: 16,
-                hoverTitleTextColor: Colors.black,
-                titleTextColor: Colors.white,
-                onPressed: () {})
-          ],
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        Text(
-          description,
-          style:  TextStyle(
-            fontWeight: FontWeight.w400,
-            color: descriptionColor == null? ConstantColor.blackColor:descriptionColor,
-            fontSize: 18,
-          ),
-          maxLines: 3,
-        ),
-      ]);
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.6,
+              child: Text(
+                description,
+                style: const TextStyle(
+                    fontWeight: FontWeight.w400,
+                    color: ConstantColor.subTitleBlackColor,
+                    fontSize: 24,
+                    height: 0),
+                maxLines: 5,
+                textAlign: isOffering! ? TextAlign.start : TextAlign.center,
+              ),
+            )
+          ]);
     } else {
       return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
         Text(
@@ -77,9 +86,9 @@ class SectionTitle extends StatelessWidget {
         ),
         Text(
           description,
-          style:  TextStyle(
+          style: const TextStyle(
               fontWeight: FontWeight.w400,
-              color: descriptionColor == null? ConstantColor.blackColor:descriptionColor,
+              color: ConstantColor.blackColor,
               fontSize: 18,
               letterSpacing: 1.5),
           softWrap: true,
@@ -89,18 +98,6 @@ class SectionTitle extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        if(includeButton!)
-        AppButton(
-            width: 155,
-            height: 46,
-            buttonColor: ConstantColor.primaryColor,
-            hoverColor: Colors.transparent,
-            hoverBorder: ConstantColor.primaryColor,
-            buttonTitle: buttonTitle!,
-            buttonTitleFontSize: 16,
-            hoverTitleTextColor: Colors.black,
-            titleTextColor: Colors.white,
-            onPressed: () {}),
       ]);
     }
   }

@@ -19,7 +19,6 @@ class GetItTouch extends StatelessWidget {
           getItTouch.title, // Dynamic text
           style: const TextStyle(
               fontSize: 20,
-              color: ConstantColor.textColor,
               fontWeight: FontWeight.w700),
         ),
         const SizedBox(

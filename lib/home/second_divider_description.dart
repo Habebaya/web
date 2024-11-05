@@ -20,8 +20,7 @@ class SecondDividerDescription extends StatelessWidget {
               "\n Management,Analysis, Tech Delivery, "
               "\nUX Design, Software Engineering"
               "\n, Quality Control & Infrastructure.",
-          includeButton: false,
-          descriptionColor: Colors.white,
+
         ),
         const SizedBox(
           height: 15,
