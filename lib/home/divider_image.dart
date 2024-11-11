@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:turn_digital_dashboard_test/home/color_constant.dart';
+import 'package:turn_digital_dashboard_test/const/color_constant.dart';
 
 class DividerImage extends StatelessWidget {
   const DividerImage({super.key});
@@ -55,11 +55,10 @@ class DividerImage extends StatelessWidget {
                     child: const Text(
                       'TurnDigital is aspiring for, always, a better, "human 2 human" experience. Connecting us all, individuals and organizations, through digital interfaces.',
                       textAlign: TextAlign.center,
-                      maxLines:
-                      3,
+                      maxLines: 2,
                       style: TextStyle(
                         color: ConstantColor.whiteColor,
-                        fontSize: 24,
+                        fontSize: 20,
                         fontFamily: 'Avenir LT Std',
                         fontWeight: FontWeight.w300,
                         height: 0,

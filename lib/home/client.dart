@@ -1,61 +1,66 @@
 import 'package:flutter/material.dart';
-import 'package:turn_digital_dashboard_test/home/responsive.dart';
-import 'package:turn_digital_dashboard_test/home/section_title.dart';
+import 'package:turn_digital_dashboard_test/const/responsive.dart';
 import 'package:turn_digital_dashboard_test/shares/app_button.dart';
 
-import 'color_constant.dart';
+import '../const/color_constant.dart';
 
-class ClientWidget extends StatelessWidget {
-  ClientWidget({super.key});
+class Client extends StatelessWidget {
+  const Client({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      color: ConstantColor.backgroundColor,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 30),
+    return  Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 90,vertical: 80),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SectionTitle(
-              title: "Client",
-              description:
-                  "Proudly working with great\n people across the globe",
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            GridView.builder(
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: Responsive.isDesktop(context) ? 4 : 1,
-                // Number of columns
-                childAspectRatio: Responsive.isDesktop(context) ? 2 : 1,
-                // Aspect ratio for each item
-                crossAxisSpacing: 10.0,
-                // Horizontal spacing
-                mainAxisSpacing: 10.0, // Vertical spacing
+            const Text(
+              'We have 70+ trusted clients',
+              style: TextStyle(
+                color: ConstantColor.blackColor,
+                fontSize: 60,
+                fontFamily: 'Avenir LT Std',
+                fontWeight: FontWeight.w700,
+                height: 0,
               ),
-              itemCount: 8,
-              itemBuilder: (context, index) {
-                return Image.asset("assets/aws.webp");
-              },
             ),
+            Padding(
+              padding: const EdgeInsets.
+                symmetric(vertical: 40.0),
+              child: SizedBox(
+                height: 100,
+                child: GridView.builder(
+                  scrollDirection: Axis.horizontal,
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: Responsive.isDesktop(context) ? 1 : 1,
+                      // Number of columns
+                      childAspectRatio: Responsive.isDesktop(context) ? 1 : 1,
+                      // Aspect ratio for each item
+                      crossAxisSpacing: 0.0,
+                      mainAxisSpacing: 80
+                    // // Horizontal spacing
+                  ),
+                  itemCount: 7,
+                  itemBuilder: (context, index) {
+                    return Image.asset("assets/aws.webp");
+                  },
+                ),
+              ),
+            ),
+
             AppButton(
-                width: 100,
-                height: 30,
-                buttonColor: Colors.transparent,
-                hoverColor: ConstantColor.blackColor,
-                hoverBorder: ConstantColor.blackColor,
-                buttonTitle: "See More",
-                buttonTitleFontSize: 13,
-                hoverTitleTextColor: Colors.white,
-                titleTextColor: ConstantColor.blackColor,
-                onPressed: (){})
+              width: MediaQuery.sizeOf(context).width* 0.16 ,
+              height: 56,
+              buttonTitle: 'See More',
+              buttonColor: ConstantColor.primaryColor,
+              onPressed: () {},
+            ),
           ],
         ),
-      ),
+
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:turn_digital_dashboard_test/home/color_constant.dart';
-import 'package:turn_digital_dashboard_test/home/responsive.dart';
+import 'package:turn_digital_dashboard_test/const/color_constant.dart';
+import 'package:turn_digital_dashboard_test/const/responsive.dart';
 
 class FirstDividerText extends StatelessWidget {
   const FirstDividerText({super.key});

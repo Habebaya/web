@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/home/Services/service_model.dart';
 import 'package:turn_digital_dashboard_test/home/Services/service_tile.dart';
-import 'package:turn_digital_dashboard_test/home/section_title.dart';
-import 'package:turn_digital_dashboard_test/home/color_constant.dart';
-import 'package:turn_digital_dashboard_test/home/responsive.dart';
+import 'package:turn_digital_dashboard_test/shares/section_title.dart';
+import 'package:turn_digital_dashboard_test/const/color_constant.dart';
+import 'package:turn_digital_dashboard_test/const/responsive.dart';
+
+import '../../shares/app_button.dart';
 
 class OurService extends StatelessWidget {
   OurService({
@@ -36,8 +38,7 @@ class OurService extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 56,vertical: 124),
-      width: MediaQuery.of(context).size.width,
+      padding: const EdgeInsets.symmetric(horizontal: 90,vertical: 80),
       color: ConstantColor.backgroundColor,
       child: Column(
         children: [
@@ -46,23 +47,17 @@ class OurService extends StatelessWidget {
             description:
                 "TurnDigital services cover all stages of the business life cycle mapped to the enterprise's challenges and needs.",
           ),
-          const SizedBox(
-            height: 28,
-
-
-
-          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 56.0),
             child: GridView.builder(
+              clipBehavior: Clip.none,
               shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: Responsive.isDesktop(context) ? 4 : 1,
                 // Number of columns
-                childAspectRatio: Responsive.isDesktop(context) ? 0.85 : 1,
+                childAspectRatio: Responsive.isDesktop(context) ? 0.82 : 0.2,
                 // Aspect ratio for each item
-                crossAxisSpacing: 37.0,
-                mainAxisSpacing: 37
+                crossAxisSpacing: 30.0,
                 // // Horizontal spacing
               ),
               itemCount: services.length,
@@ -74,6 +69,15 @@ class OurService extends StatelessWidget {
                 );
               },
             ),
+          ),
+
+          AppButton(
+            width: MediaQuery.sizeOf(context).width* 0.16 ,
+            height: 56,
+            buttonTitle: 'Discover',
+
+            buttonColor: ConstantColor.primaryColor,
+            onPressed: () {},
           ),
 
 

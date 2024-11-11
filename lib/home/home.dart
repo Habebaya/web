@@ -1,19 +1,18 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:turn_digital_dashboard_test/home/client.dart';
 import 'package:turn_digital_dashboard_test/home/divider_image.dart';
-import 'package:turn_digital_dashboard_test/home/header.dart';
 import 'package:http/http.dart' as http;
-import 'package:turn_digital_dashboard_test/home/second_divider_description.dart';
-import 'package:turn_digital_dashboard_test/home/stack_image_divider.dart';
+import 'package:turn_digital_dashboard_test/header/header.dart';
+import 'package:turn_digital_dashboard_test/home/offering/offering.dart';
 import 'package:turn_digital_dashboard_test/home/technology.dart';
-import '../boundary/presentation/screen/boundary_section.dart';
-import '../offering/offering.dart';
 import 'Services/service.dart';
-import 'client.dart';
-import 'color_constant.dart';
-import 'first_divider_text.dart';
-import 'footer.dart';
+import '../const/color_constant.dart';
+import 'boundary/presentation/screen/boundary_section.dart';
+import 'engagement/engagment.dart';
+import 'footer/footer.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -33,8 +32,8 @@ class _HomePageState extends State<HomePage> {
   Future<void> getHomePageContent() async {
     print('Data received:');
 
-    const String url = 'https://dartfrog.azurewebsites.net/api/home/getHomePageContent';
-
+    const String url =
+        'https://dartfrog.azurewebsites.net/api/home/getHomePageContent';
 
     try {
       // Send the GET request
@@ -42,7 +41,6 @@ class _HomePageState extends State<HomePage> {
 
       final response = await http.get(Uri.parse(url));
       print('Getii:');
-
 
       // Check if the response is successful
       if (response.statusCode == 200) {
@@ -59,9 +57,6 @@ class _HomePageState extends State<HomePage> {
       print('Error: $e');
     }
   }
-
-
-
 
   @override
   void initState() {
@@ -98,76 +93,25 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: ConstantColor.backgroundColor,
-        drawer: const Drawer(),
-        body: SingleChildScrollView(
+    return SingleChildScrollView(
           controller: _scrollController,
           child: Column(
             children: [
-              Header(),
-              OurService(),
-              DividerImage(),
-              const Offering(),
 
-              SizedBox(height:50 ,),
-              // StackImageDivider(
-              //     scrollDirection: _scrollDirection,
-              //     backGroundImage: "assets/agile.png",
-              //     mobileHeight: MediaQuery.of(context).size.height * 0.7,
-              //     aboveWidget: const FirstDividerText()),
-              // StackImageDivider(
-              //     scrollDirection: _scrollDirection,
-              //     backGroundImage: "assets/engaged-employees.jpg",
-              //     mobileHeight: MediaQuery.of(context).size.height * 1,
-              //     aboveWidget: const SecondDividerDescription()),
-              // ClientWidget(),
-              // TechnologyWidget(),
-              // BoundarySection(),
+              OurService(),
+              const DividerImage(),
+              Offering(),
+
+              const Engagement(),
+              const Client(),
+              Technology(),
+
+              BoundarySection(),
               Footer()
             ],
           ),
-        )
-
-      // Stack(
-      //   children: [
-      //     if (Responsive.isDesktop(context))
-      //       VideoSection(scrollController: _scrollController),
-      //     // Scrollable Content
-      //     SingleChildScrollView(
-      //       controller: _scrollController,
-      //       child: Column(
-      //         children: [
-      //           /// Top Spacer
-      //           Responsive.isDesktop(context)
-      //               ? SizedBox(height: MediaQuery.of(context).size.height * 0.8)
-      //               : SizedBox(
-      //                   width: MediaQuery.of(context).size.width,
-      //                   height: MediaQuery.of(context).size.height * 0.4,
-      //                   child: Center(child: HeaderVideoEmbed())),
-      //           HomeContentDividerWithImage(
-      //             scrollDirection: _scrollDirection,
-      //             backgroundImage: "assets/agile.png",
-      //             topWidget: OurService(),
-      //             isTopWidget: true,
-      //           ),
-      //           HomeContentWithImage(
-      //               scrollDirection: _scrollDirection,
-      //               backgroundImage: "assets/engaged-employees.jpg",
-      //               topWidget: const Offering(),
-      //               bottomWidget: ClientWidget()),
-      //           TechnologyWidget(),
-      //           BoundarySection(),
-      //
-      //           Footer()
-      //         ],
-      //       ),
-      //     ),
-      //   ],
-      // ),
-    );
+        );
   }
 }
