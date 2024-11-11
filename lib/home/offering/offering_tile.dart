@@ -38,6 +38,7 @@ class OfferingTile extends StatelessWidget {
                 lastIndex: lastIndex,
                 index: index),
           )
+        //kk
       ],
     );
 
