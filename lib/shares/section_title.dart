@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:turn_digital_dashboard_test/const/responsive.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../const/color_constant.dart';
@@ -53,16 +53,14 @@ class SectionTitle extends StatelessWidget {
           SizedBox(
             height: isOffering! ? 5 : 16,
           ),
-          // isOffering!
-          //     ? Html(
-          //   shrinkWrap: true,
-          //       data: description,
-          //     )
-          //     :
+          isOffering!
+              ? Html(
+            shrinkWrap: true,
+                data: description,
+              )
+              :
           SizedBox(
-            width: isOffering!
-                ? MediaQuery.of(context).size.width * 0.6
-                : MediaQuery.of(context).size.width * 0.6,
+            width: MediaQuery.of(context).size.width * 0.6,
             child: Text(
               description!,
               style: const TextStyle(

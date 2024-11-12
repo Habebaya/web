@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:turn_digital_dashboard_test/const/constants.dart';
+import 'package:turn_digital_dashboard_test/const/color_constant.dart';
 import 'package:turn_digital_dashboard_test/home/offering/offering_model.dart';
 
 class OfferingTile extends StatelessWidget {
@@ -25,8 +25,8 @@ class OfferingTile extends StatelessWidget {
             offeringItem.title!,
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
-            style: const TextStyle(
-              color: Color(0xFF565656),
+            style:  const TextStyle(
+              color: ConstantColor.subTitleGrayColor,
               fontSize: 20,
               fontFamily: 'Avenir LT Std',
               fontWeight: FontWeight.w400,
