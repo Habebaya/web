@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/const/color_constant.dart';
-import 'package:turn_digital_dashboard_test/const/responsive.dart';
 import 'package:turn_digital_dashboard_test/header_video_embded.dart';
-import 'package:turn_digital_dashboard_test/home/td_logo.dart';
 
 class Header extends StatefulWidget {
   Header({

@@ -5,8 +5,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../const/color_constant.dart';
 
 class SectionTitle extends StatelessWidget {
-  String title;
-  String description;
+  String? title;
+  String? description;
   bool? isOffering;
 
   SectionTitle({
@@ -18,89 +18,62 @@ class SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (Responsive.isDesktop(context)) {
-      return Column(
-          crossAxisAlignment: isOffering!
-              ? CrossAxisAlignment.start
-              : CrossAxisAlignment.center,
-          children: [
-            isOffering!
-                ? Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          title,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                              color: ConstantColor.blackColor,
-                              fontSize: 60),
-                        ),
-                      ),
-                      // if(isOffering!)
-                      Expanded(
-                          flex: 1,
-                          child: SvgPicture.asset(
-                              "assets/icon/arrow_offering.svg")),
-                    ],
-                  )
-                : Center(
-                    child: Text(
-                      title,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w700,
-                          color: ConstantColor.blackColor,
-                          fontSize: 60),
-                    ),
-                  ),
-            SizedBox(
-              height: isOffering! ? 20 : 16,
-            ),
-            SizedBox(
-              width: isOffering!
-                  ? MediaQuery.of(context).size.width * 0.35
-                  : MediaQuery.of(context).size.width * 0.6,
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment:
+            isOffering! ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+        children: [
+          if (!isOffering!)
+            Center(
               child: Text(
-                description,
+                title!,
                 style: const TextStyle(
-                    fontWeight: FontWeight.w400,
-                    color: ConstantColor.subTitleGrayColor,
-                    fontSize: 20,
-                    height: 0),
-                maxLines: 3,
-                textAlign: isOffering! ? TextAlign.start : TextAlign.center,
+                    fontWeight: FontWeight.w700,
+                    color: ConstantColor.blackColor,
+                    fontSize: 50),
               ),
-            )
-          ]);
-    } else {
-      return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        Text(
-          title,
-          style: const TextStyle(
-            fontWeight: FontWeight.w400,
-            color: ConstantColor.primaryColor,
-            fontSize: 44,
+            ),
+          if (isOffering!)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  title!,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w700,
+                      color: ConstantColor.blackColor,
+                      fontSize: 50),
+                ),
+                SvgPicture.asset(
+                  "assets/icon/arrow_offering.svg",
+                  width: 100,
+                ),
+              ],
+            ),
+          SizedBox(
+            height: isOffering! ? 5 : 16,
           ),
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        Text(
-          description,
-          style: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: ConstantColor.blackColor,
-              fontSize: 18,
-              letterSpacing: 1.5),
-          softWrap: true,
-          maxLines: 10,
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-      ]);
-    }
+          // isOffering!
+          //     ? Html(
+          //   shrinkWrap: true,
+          //       data: description,
+          //     )
+          //     :
+          SizedBox(
+            width: isOffering!
+                ? MediaQuery.of(context).size.width * 0.6
+                : MediaQuery.of(context).size.width * 0.6,
+            child: Text(
+              description!,
+              style: const TextStyle(
+                  fontWeight: FontWeight.w400,
+                  color: ConstantColor.subTitleGrayColor,
+                  fontSize: 20,
+                  height: 0),
+              maxLines: 5,
+              textAlign: isOffering! ? TextAlign.start : TextAlign.center,
+            ),
+          )
+        ]);
   }
 }

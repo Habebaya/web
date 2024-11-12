@@ -72,7 +72,7 @@ class OurService extends StatelessWidget {
           ),
 
           AppButton(
-            width: MediaQuery.sizeOf(context).width* 0.16 ,
+            width: MediaQuery.sizeOf(context).width* 0.2 ,
             height: 56,
             buttonTitle: 'Discover',
 

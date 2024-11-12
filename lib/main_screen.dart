@@ -7,10 +7,12 @@ import 'const/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'header/header.dart';
 import 'home/home.dart';
-import 'home/td_logo.dart';
+import 'home/models/home_model.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+  HomeModel?  homeModel;
+
+   MainScreen({super.key, required this.homeModel});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -22,7 +24,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: Drawer(),
+        drawer: const Drawer(),
         backgroundColor: ConstantColor.backgroundColor,
         body: SingleChildScrollView(
           child: Column(
@@ -65,7 +67,7 @@ class _MainScreenState extends State<MainScreen> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             SvgPicture.asset('assets/icon/td_logo.svg'),
-                            SizedBox(
+                            const SizedBox(
                               width: 50,
                             ),
                             Container(
@@ -144,7 +146,7 @@ class _MainScreenState extends State<MainScreen> {
     switch (index) {
       case 0:
         defaultScreenIndex = 0;
-        return const HomePage();
+        return  HomePage(homeModel: widget.homeModel!,);
       case 1:
         defaultScreenIndex = 1;
         return Container();

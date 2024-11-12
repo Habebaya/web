@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/home/client.dart';
 import 'package:turn_digital_dashboard_test/home/divider_image.dart';
 import 'package:http/http.dart' as http;
-import 'package:turn_digital_dashboard_test/header/header.dart';
 import 'package:turn_digital_dashboard_test/home/offering/offering.dart';
 import 'package:turn_digital_dashboard_test/home/technology.dart';
 import 'Services/service.dart';
@@ -12,9 +11,12 @@ import '../const/color_constant.dart';
 import 'boundary/presentation/screen/boundary_section.dart';
 import 'engagement/engagment.dart';
 import 'footer/footer.dart';
+import 'models/home_model.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  HomeModel? homeModel;
+
+   HomePage({super.key,required this.homeModel});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -60,7 +62,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    getHomePageContent();
 
     super.initState();
 
@@ -96,22 +97,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-          controller: _scrollController,
-          child: Column(
-            children: [
-
-              OurService(),
-              const DividerImage(),
-              Offering(),
-
-              const Engagement(),
-              const Client(),
-              Technology(),
-
-              BoundarySection(),
-              Footer()
-            ],
-          ),
-        );
+      controller: _scrollController,
+      child: Column(
+        children: [
+          OurService(),
+          const DividerImage(),
+          Offering(homeModel: widget.homeModel,),
+          const Engagement(),
+          const Client(),
+          Technology(),
+          BoundarySection(),
+          Footer()
+        ],
+      ),
+    );
   }
 }

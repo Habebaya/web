@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:turn_digital_dashboard_test/landing_page.dart';
 import 'package:turn_digital_dashboard_test/main_screen.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         //         maxScale: 2.5,
         //         boundaryMargin: EdgeInsets.zero,
         //         child:
-           home:      MainScreen());
+           home:      LandingPage());
     //);
     //);
   }

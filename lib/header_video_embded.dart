@@ -1,9 +1,6 @@
 import 'dart:html' as html;
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'dart:ui_web' as ui;
-import 'package:blur/blur.dart';
-import 'package:flutter/rendering.dart';
 
 class HeaderVideoEmbed extends StatefulWidget {
   @override
