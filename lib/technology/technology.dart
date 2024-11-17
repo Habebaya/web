@@ -4,9 +4,12 @@ import 'package:turn_digital_dashboard_test/shares/section_title.dart';
 import 'package:turn_digital_dashboard_test/shares/app_button.dart';
 
 import '../const/color_constant.dart';
+import '../home/models/home_model.dart';
 
 class Technology extends StatelessWidget {
-  Technology({super.key});
+  final HomeModel? technologyContent;
+
+  const  Technology({super.key,required this.technologyContent});
 
   @override
   Widget build(BuildContext context) {

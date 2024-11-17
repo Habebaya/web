@@ -1,3 +1,5 @@
+import 'offering_item_model.dart';
+
 class OfferingModel {
   int? count;
   String? title;
@@ -23,16 +25,5 @@ class OfferingModel {
   }
 }
 
-class OfferingItemModel {
-  String? title;
-  String? description;
-  String? icon;
 
-  OfferingItemModel({this.title, this.description, this.icon});
 
-  OfferingItemModel.fromJson(Map<String, dynamic> json) {
-    title = json['title'];
-    description = json['description'];
-    icon = json['icon'];
-  }
-}

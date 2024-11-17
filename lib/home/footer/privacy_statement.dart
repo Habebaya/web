@@ -9,7 +9,7 @@ class PrivacyStatement extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container(
       height: MediaQuery.sizeOf(context).height * 0.06,
-      color: ConstantColor.rightBackgroundColor,
+      color: ConstantColor.privacyStatementBackgroundColor,
       child: const Padding(
         padding:
         EdgeInsets.symmetric(horizontal: 120.0, vertical: 11),

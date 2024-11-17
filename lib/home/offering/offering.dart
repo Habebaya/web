@@ -9,9 +9,9 @@ import 'offering_tile.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Offering extends StatelessWidget {
-  HomeModel? homeModel;
+ final  HomeModel? homeModel;
 
-  Offering({super.key, required this.homeModel});
+ const Offering({super.key, required this.homeModel});
 
   // List<String> newOffering = [];
   //

@@ -5,11 +5,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../const/color_constant.dart';
 
 class SectionTitle extends StatelessWidget {
-  String? title;
-  String? description;
-  bool? isOffering;
+final  String? title;
+ final String? description;
+  final bool? isOffering;
 
-  SectionTitle({
+ const  SectionTitle({
     super.key,
     required this.title,
     required this.description,
@@ -53,24 +53,9 @@ class SectionTitle extends StatelessWidget {
           SizedBox(
             height: isOffering! ? 5 : 16,
           ),
-          isOffering!
-              ? Html(
+          Html(
             shrinkWrap: true,
-                data: description,
-              )
-              :
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.6,
-            child: Text(
-              description!,
-              style: const TextStyle(
-                  fontWeight: FontWeight.w400,
-                  color: ConstantColor.subTitleGrayColor,
-                  fontSize: 20,
-                  height: 0),
-              maxLines: 5,
-              textAlign: isOffering! ? TextAlign.start : TextAlign.center,
-            ),
+            data: description,
           )
         ]);
   }

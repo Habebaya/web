@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:turn_digital_dashboard_test/const/color_constant.dart';
+import 'package:turn_digital_dashboard_test/home/engagement/models/engagement_item_model.dart';
 
-import 'engagement_model.dart';
+import 'models/engagement_model.dart';
 
 class EngagementItem extends StatelessWidget {
-  EngagementModel engagementModel;
+  EngagementItemModel engagementItem;
 
-  EngagementItem({super.key, required this.engagementModel});
+  EngagementItem({super.key, required this.engagementItem});
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +33,14 @@ class EngagementItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(48),
                   ),
                 ),
-                child: SvgPicture.asset(engagementModel.icon),
+                child: SvgPicture.asset(engagementItem.logo!),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
               Text(
-                engagementModel.title,
-                style: TextStyle(
+                engagementItem.title!,
+                style: const TextStyle(
                   color: ConstantColor.blackColor,
                   fontSize: 20,
                   // fontFamily: 'Avenir LT Std',

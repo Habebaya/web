@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/const/responsive.dart';
+import '../../../models/home_model.dart';
 import '../../model/boundary_model.dart';
 import '../widget/boundary_description.dart';
 
 class BoundarySection extends StatelessWidget {
-  BoundarySection({super.key});
+  final HomeModel? boundaryContent;
+
+  const  BoundarySection({super.key,required this.boundaryContent});
 
   @override
   Widget build(BuildContext context) {

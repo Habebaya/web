@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:turn_digital_dashboard_test/const/color_constant.dart';
-import 'package:turn_digital_dashboard_test/home/offering/offering_model.dart';
+
+import 'model/offering_item_model.dart';
 
 class OfferingTile extends StatelessWidget {
-  OfferingItemModel offeringItem;
+ final  OfferingItemModel offeringItem;
 
-  OfferingTile({super.key, required this.offeringItem});
+ const  OfferingTile({super.key, required this.offeringItem});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +15,9 @@ class OfferingTile extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        SvgPicture.network(
-        offeringItem.icon!,
-        ),
+        // SvgPicture.network(
+        // offeringItem.icon!,
+        // ),
         const SizedBox(
           width: 10,
         ),

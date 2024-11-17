@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/const/responsive.dart';
 import 'package:turn_digital_dashboard_test/shares/app_button.dart';
 
-import '../const/color_constant.dart';
+import '../../const/color_constant.dart';
+import '../models/home_model.dart';
 
-class Client extends StatelessWidget {
-  const Client({super.key});
+class Clients extends StatelessWidget {
+  final HomeModel? clientsContent;
+
+ const  Clients({super.key,required this.clientsContent});
 
   @override
   Widget build(BuildContext context) {

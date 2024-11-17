@@ -1,6 +1,6 @@
 {
-    "name": "turn_digital_dashboard_test",
-    "short_name": "turn_digital_dashboard_test",
+    "name": "Turn Digital",
+    "short_name": "Turn Digital",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

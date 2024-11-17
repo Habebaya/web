@@ -46,7 +46,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
-  video_player:  ^2.9.2
+  video_player: ^2.9.2
   http: ^1.2.2
   flutter_html:
   flutter_svg: ^2.0.11
@@ -68,11 +68,13 @@ flutter:
   assets:
     - assets/
     - assets/icon/
+    - assets/gif/
     - assets/background/
     - assets/aws.webp
     - assets/video/
     - assets/lottie/
     - assets/fonts/MaterialIcons-Regular.otf
+    - assets/fonts/avenir_book/avenir_font.ttf
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -90,6 +92,14 @@ flutter:
     - family: MaterialIcons
       fonts:
         - asset: assets/fonts/MaterialIcons-Regular.otf
+    - family: Avenir LT Std
+      fonts:
+        - asset: assets/fonts/avenir_book/avenir_font.ttf
+#          weight: 900
+#        - asset: assets/fonts/avenir_book/avenir_font.ttf
+#          weight: 400
+#        - asset: assets/fonts/avenir_book/avenir_font.ttf
+#          weight: 700
 
   #   - family: Trajan Pro
   #     fonts:

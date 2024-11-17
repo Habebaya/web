@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/const/color_constant.dart';
 import 'package:turn_digital_dashboard_test/const/responsive.dart';
+import 'package:turn_digital_dashboard_test/home/footer/footer.dart';
 import 'package:turn_digital_dashboard_test/shares/app_button.dart';
 
 import 'const/constants.dart';
@@ -10,9 +11,9 @@ import 'home/home.dart';
 import 'home/models/home_model.dart';
 
 class MainScreen extends StatefulWidget {
-  HomeModel?  homeModel;
+ final HomeModel? homeModel;
 
-   MainScreen({super.key, required this.homeModel});
+ const MainScreen({super.key, required this.homeModel});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -31,7 +32,7 @@ class _MainScreenState extends State<MainScreen> {
             children: [
               Stack(
                 children: [
-                  Header(),
+                  const Header(),
                   if (!Responsive.isDesktop(context))
                     Container(
                       color: ConstantColor.backgroundColor,
@@ -49,7 +50,6 @@ class _MainScreenState extends State<MainScreen> {
                                 ),
                                 onPressed: () {}
 
-                                // onPressed:
                                 ),
                           ],
                         ),
@@ -137,6 +137,7 @@ class _MainScreenState extends State<MainScreen> {
                 ],
               ),
               _buildBody(defaultScreenIndex),
+              if (Responsive.isDesktop(context)) Footer()
             ],
           ),
         ));
@@ -145,10 +146,10 @@ class _MainScreenState extends State<MainScreen> {
   _buildBody(int index) {
     switch (index) {
       case 0:
-        defaultScreenIndex = 0;
-        return  HomePage(homeModel: widget.homeModel!,);
+        return HomePage(
+          homeModel: widget.homeModel!,
+        );
       case 1:
-        defaultScreenIndex = 1;
         return Container();
       case 2:
         return Container();

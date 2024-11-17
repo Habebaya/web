@@ -4,10 +4,15 @@ import 'package:turn_digital_dashboard_test/shares/section_title.dart';
 import 'package:turn_digital_dashboard_test/shares/app_button.dart';
 
 import '../../const/color_constant.dart';
+import '../models/home_model.dart';
 import 'engagement_item.dart';
 
 class Engagement extends StatelessWidget {
-  const Engagement({super.key});
+  final HomeModel? engagementContent;
+  final bool useDummy;
+
+  const Engagement(
+      {super.key, required this.engagementContent, this.useDummy = false});
 
   @override
   Widget build(BuildContext context) {
@@ -25,22 +30,22 @@ class Engagement extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 SectionTitle(
-                  title: "Engagement",
-                  description:
-                      'Project as a service (preferred), managed teams, or extended teams, are formulas that cover program management, analysis, tech delivery, ux design, software engineering, quality control & infrastructure.',
-                ),
+                    title: engagementContent!.engagementModel!.title!,
+                    description: engagementContent!.engagementModel!.subtitle!),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
-                  children: Constants.engagement.map((item) {
-                    return EngagementItem(engagementModel: item);
+                  children: engagementContent!.engagementModel!.engagements!
+                      .map((item) {
+                    return EngagementItem(engagementItem: item);
                   }).toList(),
                 ),
                 AppButton(
-                  width: MediaQuery.sizeOf(context).width * 0.16,
+                  width: MediaQuery.sizeOf(context).width * 0.2,
                   height: 56,
-                  buttonTitle: 'Engage',
+                  buttonTitle:
+                      engagementContent!.engagementModel!.buttonText!,
                   buttonColor: ConstantColor.primaryColor,
                   onPressed: () {},
                 ),
