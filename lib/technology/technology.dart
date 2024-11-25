@@ -15,7 +15,7 @@ class Technology extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      color: ConstantColor.technologyBackgroundColor,
+      color: StaticColors.technologyBackgroundColor,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 90,vertical: 80),
         child: Column(
@@ -47,7 +47,7 @@ class Technology extends StatelessWidget {
               width: MediaQuery.sizeOf(context).width* 0.16 ,
               height: 56,
               buttonTitle: 'See More',
-              buttonColor: ConstantColor.primaryColor,
+              buttonColor: StaticColors.appTheme_55B,
               onPressed: () {},
             ),
           ],

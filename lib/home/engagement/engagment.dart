@@ -46,7 +46,7 @@ class Engagement extends StatelessWidget {
                   height: 56,
                   buttonTitle:
                       engagementContent!.engagementModel!.buttonText!,
-                  buttonColor: ConstantColor.primaryColor,
+                  buttonColor: StaticColors.appTheme_55B,
                   onPressed: () {},
                 ),
               ],

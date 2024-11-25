@@ -14,12 +14,12 @@ class ServiceArrowStack extends StatelessWidget {
         children: [
           Icon(
             Icons.arrow_forward_ios_rounded,
-            color: ConstantColor.arrowServiceTextColor,
+            color: StaticColors.arrowServiceTextColor,
             size: 22,
           ),
           Icon(
             Icons.arrow_forward_ios_rounded,
-            color: ConstantColor.arrowServiceTextColor,
+            color: StaticColors.arrowServiceTextColor,
             size: 22,
           ),
         ],

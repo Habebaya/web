@@ -11,7 +11,7 @@ class FooterTdLogo extends StatelessWidget {
       children: [
         Icon(
           Icons.power_settings_new_rounded,
-          color: ConstantColor.primaryColor,
+          color: StaticColors.appTheme_55B,
           size: 40,
         ),
         SizedBox(height: 15,),
@@ -19,14 +19,14 @@ class FooterTdLogo extends StatelessWidget {
           "TURN DIGITAL",
           style: TextStyle(
               fontSize: 24,
-              color: ConstantColor.whiteColor,
+              color: StaticColors.whiteColor,
               fontWeight: FontWeight.w700,height: 0.9),
         ),
         Text(
           "TAILORING DIGITAL",
           style: TextStyle(
               fontSize: 14,
-              color: ConstantColor.whiteColor,
+              color: StaticColors.whiteColor,
               fontWeight: FontWeight.w400),
         )
       ],

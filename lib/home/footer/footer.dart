@@ -24,7 +24,7 @@ class Footer extends StatelessWidget {
     return Container(
         height: MediaQuery.sizeOf(context).height * 0.4,
         width: MediaQuery.sizeOf(context).width,
-        color: ConstantColor.blackColor,
+        color: StaticColors.blackColor,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.center,

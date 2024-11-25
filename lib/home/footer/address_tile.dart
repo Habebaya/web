@@ -26,7 +26,7 @@ class AddressTile extends StatelessWidget {
                 fontSize: 16,
 
                 fontWeight: FontWeight.w400,
-                color: ConstantColor.whiteColor),
+                color: StaticColors.whiteColor),
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
           ),

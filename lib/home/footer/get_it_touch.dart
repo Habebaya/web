@@ -41,7 +41,7 @@ class GetItTouch extends StatelessWidget {
           width: MediaQuery.sizeOf(context).width* 0.16,
           height: 40,
           buttonTitle: 'Let’s Talk',
-          buttonColor: ConstantColor.primaryColor,
+          buttonColor: StaticColors.appTheme_55B,
           onPressed: () {},
         ),
       ],

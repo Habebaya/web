@@ -29,7 +29,7 @@ final  String? title;
                 title!,
                 style: const TextStyle(
                     fontWeight: FontWeight.w700,
-                    color: ConstantColor.blackColor,
+                    color: StaticColors.blackColor,
                     fontSize: 50),
               ),
             ),
@@ -41,7 +41,7 @@ final  String? title;
                   title!,
                   style: const TextStyle(
                       fontWeight: FontWeight.w700,
-                      color: ConstantColor.blackColor,
+                      color: StaticColors.blackColor,
                       fontSize: 50),
                 ),
                 SvgPicture.asset(

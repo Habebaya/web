@@ -27,7 +27,7 @@ class OfferingTile extends StatelessWidget {
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
             style:  const TextStyle(
-              color: ConstantColor.subTitleGrayColor,
+              color: StaticColors.subTitleGrayColor,
               fontSize: 20,
               fontFamily: 'Avenir LT Std',
               fontWeight: FontWeight.w400,

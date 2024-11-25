@@ -15,7 +15,7 @@ class ServiceNumberStack extends StatelessWidget {
         child: Text(
           (index + 1).toString(),
           style: const TextStyle(
-            color: ConstantColor.indexServiceTextColor,
+            color: StaticColors.indexServiceTextColor,
             fontSize: 128,
             fontFamily: 'Avenir LT Std',
             fontWeight: FontWeight.w700,

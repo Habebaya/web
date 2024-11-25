@@ -20,7 +20,7 @@ class OurService extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 40),
-      color: ConstantColor.backgroundColor,
+      color: StaticColors.backgroundColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -111,7 +111,7 @@ class OurService extends StatelessWidget {
             width: MediaQuery.sizeOf(context).width * 0.2,
             height: 56,
             buttonTitle: serviceContent!.serviceModel!.homeButtonText!,
-            buttonColor: ConstantColor.primaryColor,
+            buttonColor: StaticColors.appTheme_55B,
             onPressed: () {},
           ),
         ],

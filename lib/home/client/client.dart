@@ -21,7 +21,7 @@ class Clients extends StatelessWidget {
             const Text(
               'We have 70+ trusted clients',
               style: TextStyle(
-                color: ConstantColor.blackColor,
+                color: StaticColors.blackColor,
                 fontSize: 60,
                 fontFamily: 'Avenir LT Std',
                 fontWeight: FontWeight.w700,
@@ -58,7 +58,7 @@ class Clients extends StatelessWidget {
               width: MediaQuery.sizeOf(context).width* 0.16 ,
               height: 56,
               buttonTitle: 'See More',
-              buttonColor: ConstantColor.primaryColor,
+              buttonColor: StaticColors.appTheme_55B,
               onPressed: () {},
             ),
           ],

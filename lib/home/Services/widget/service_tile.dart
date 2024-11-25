@@ -38,7 +38,7 @@ class _ServiceTileState extends State<ServiceTile> {
         clipBehavior: Clip.hardEdge,
         padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 25),
         decoration: BoxDecoration(
-          border: Border.all(color: ConstantColor.borderColor, width: 1),
+          border: Border.all(color: StaticColors.borderColor, width: 1),
           shape: BoxShape.circle,
         ),
         child: Column(
@@ -54,15 +54,15 @@ class _ServiceTileState extends State<ServiceTile> {
                 CircleAvatar(
                     radius: 30,
                     backgroundColor: isHovered
-                        ? ConstantColor.primaryColor
-                        : ConstantColor.primaryColor.withOpacity(0.2),
+                        ? StaticColors.appTheme_55B
+                        : StaticColors.appTheme_55B.withOpacity(0.2),
                     child: SvgPicture.network(
                       widget.serviceItem.serviceImg!,
                       alignment: Alignment.center,
                       colorFilter: ColorFilter.mode(
                         isHovered
-                            ? ConstantColor.whiteColor
-                            : ConstantColor.primaryColor,
+                            ? StaticColors.whiteColor
+                            : StaticColors.appTheme_55B,
                         BlendMode.srcIn,
                       ),
                     )),
@@ -72,7 +72,7 @@ class _ServiceTileState extends State<ServiceTile> {
                 Container(
                     width: 33,
                     padding: const EdgeInsets.all(1.5),
-                    color: ConstantColor.primaryColor),
+                    color: StaticColors.appTheme_55B),
               ],
             ),
             Text(
@@ -80,8 +80,8 @@ class _ServiceTileState extends State<ServiceTile> {
               textAlign: TextAlign.center,
               style:  TextStyle(
                 color: isHovered
-                    ? ConstantColor.primaryColor
-                    : ConstantColor.blackColor,
+                    ? StaticColors.appTheme_55B
+                    : StaticColors.blackColor,
                 fontSize: 30,
                 fontFamily: 'Avenir LT Std',
                 fontWeight: FontWeight.w700,
@@ -92,7 +92,7 @@ class _ServiceTileState extends State<ServiceTile> {
               maxLines: 4,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                  color: ConstantColor.subTitleGrayColor,
+                  color: StaticColors.subTitleGrayColor,
                   fontSize: 16,
                   fontFamily: 'Avenir LT Std',
                   fontWeight: FontWeight.w300,
@@ -102,12 +102,12 @@ class _ServiceTileState extends State<ServiceTile> {
               height: 31,
               width: 31,
               decoration: const BoxDecoration(
-                color: ConstantColor.primaryColor,
+                color: StaticColors.appTheme_55B,
                 shape: BoxShape.circle,
               ),
               child: const Icon(
                 Icons.arrow_forward_ios,
-                color: ConstantColor.arrowIconColor,
+                color: StaticColors.arrowIconColor,
                 size: 15,
               ),
             )

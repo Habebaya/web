@@ -26,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         drawer: const Drawer(),
-        backgroundColor: ConstantColor.backgroundColor,
+        backgroundColor: StaticColors.backgroundColor,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -35,18 +35,19 @@ class _MainScreenState extends State<MainScreen> {
                   const Header(),
                   if (!Responsive.isDesktop(context))
                     Container(
-                      color: ConstantColor.backgroundColor,
+                      color: StaticColors.backgroundColor,
                       height: 70,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+
                             SvgPicture.asset('assets/icon/td_logo.svg'),
                             IconButton(
                                 icon: const Icon(
                                   Icons.menu,
-                                  color: ConstantColor.primaryColor,
+                                  color: StaticColors.appTheme_55B,
                                 ),
                                 onPressed: () {}
 
@@ -95,7 +96,7 @@ class _MainScreenState extends State<MainScreen> {
                                           Constants.header[index].title
                                               .toUpperCase(),
                                           style: const TextStyle(
-                                            color: ConstantColor.blackColor,
+                                            color: StaticColors.blackColor,
                                             fontSize: 20,
                                             fontFamily: 'Avenir LT Std',
                                             fontWeight: FontWeight.w300,
@@ -108,7 +109,7 @@ class _MainScreenState extends State<MainScreen> {
                                           padding: const EdgeInsets.all(20),
                                           decoration: BoxDecoration(
                                               color: defaultScreenIndex == index
-                                                  ? ConstantColor.primaryColor
+                                                  ? StaticColors.appTheme_55B
                                                   : Colors.transparent,
                                               borderRadius:
                                                   BorderRadius.circular(50)),
@@ -127,7 +128,7 @@ class _MainScreenState extends State<MainScreen> {
                             AppButton(
                                 width: MediaQuery.sizeOf(context).width * 0.14,
                                 height: 56,
-                                buttonColor: ConstantColor.primaryColor,
+                                buttonColor: StaticColors.appTheme_55B,
                                 buttonTitle: "Contact us",
                                 onPressed: () {}),
                           ],

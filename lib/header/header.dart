@@ -21,7 +21,7 @@ class Header extends StatelessWidget {
             Opacity(opacity: 0.48, child: HeaderVideoEmbed()),
             Opacity(
               opacity: 0.9,
-              child: Container(color: ConstantColor.whiteColor),
+              child: Container(color: StaticColors.whiteColor),
             ),
             const Positioned(
               left: 60,
@@ -35,10 +35,11 @@ class Header extends StatelessWidget {
                       title: "TurnDigital",
                       subTitle: "TAILORING",
                       subTitle1: "WEB<br>TECHNOLOGIES",
-                      description: "To achieve the enterprise objectives.Based on DXP,CMS,or Native,<br> custom solutions are crafted for extensibility, performance,security, and integrability with business applications.",
+                      description:
+                          "To achieve the enterprise objectives.Based on DXP,CMS,or Native,<br> custom solutions are crafted for extensibility, performance,security, and integrability with business applications.",
                     ),
                   ),
-                  Expanded(child: HeaderImage()),
+                   Expanded(child: HeaderImage()),
                 ],
               ),
             )

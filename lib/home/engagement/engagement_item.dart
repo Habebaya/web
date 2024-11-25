@@ -28,7 +28,7 @@ class EngagementItem extends StatelessWidget {
                 height: 57.60,
                 padding: const EdgeInsets.all(12),
                 decoration: ShapeDecoration(
-                  color: ConstantColor.primaryColor.withOpacity(0.2),
+                  color: StaticColors.appTheme_55B.withOpacity(0.2),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(48),
                   ),
@@ -41,7 +41,7 @@ class EngagementItem extends StatelessWidget {
               Text(
                 engagementItem.title!,
                 style: const TextStyle(
-                  color: ConstantColor.blackColor,
+                  color: StaticColors.blackColor,
                   fontSize: 20,
                   // fontFamily: 'Avenir LT Std',
                   fontWeight: FontWeight.w400,

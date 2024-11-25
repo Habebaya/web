@@ -59,7 +59,7 @@ class Offering extends StatelessWidget {
                   width: MediaQuery.sizeOf(context).width * 0.2,
                   height: 56,
                   buttonTitle: homeModel!.offeringModel!.homeButtonText!,
-                  buttonColor: ConstantColor.primaryColor,
+                  buttonColor: StaticColors.appTheme_55B,
                   onPressed: () {},
                 ),
               ],

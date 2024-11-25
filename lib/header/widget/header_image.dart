@@ -12,47 +12,58 @@ class HeaderImage extends StatefulWidget {
 
 class _HeaderImageState extends State<HeaderImage>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
+  AnimationController? _controller;
   late Animation<double> _animation;
 
   @override
   void initState() {
     super.initState();
+
     _controller = AnimationController(
       duration: const Duration(seconds: 2),
       vsync: this,
     );
-    _animation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
+    _animation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller!);
 
-    // Start the animation
-    _controller.repeat(reverse: true);
+    _controller!.addStatusListener((status) {
+      if (!mounted) {
+        _controller?.stop();
+      }
+    });
+
+    _controller!.repeat(reverse: true);
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller?.stop();
+    _controller?.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+
     return Stack(
       alignment: Alignment.center,
       children: [
         FadeTransition(
           opacity: _animation,
           child: Container(
-              height: 350,
-              width: 350,
-              decoration: BoxDecoration(
-                  color: ConstantColor.primaryColor.withOpacity(0.15),
-                  borderRadius: BorderRadius.circular(10000))),
+            height: mediaQuery.size.height * 0.36,
+            width: mediaQuery.size.width * 0.2,
+            decoration: BoxDecoration(
+              color: StaticColors.appTheme_55B.withOpacity(0.24),
+              borderRadius: BorderRadius.circular(10000),
+            ),
+          ),
         ),
         Center(
           child: Container(
             clipBehavior: Clip.none,
-            height: MediaQuery.sizeOf(context).height * 0.76,
-            width: MediaQuery.sizeOf(context).width * 0.41,
+            height: mediaQuery.size.height * 0.76,
+            width: mediaQuery.size.width * 0.41,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/background/logo_background.png'),
@@ -62,9 +73,9 @@ class _HeaderImageState extends State<HeaderImage>
             child: Center(
               child: Image.asset(
                 'assets/gif/td_logo.gif',
-                fit: BoxFit.contain,
-                height: MediaQuery.sizeOf(context).height * 0.36,
-                width: MediaQuery.sizeOf(context).width * 0.2,
+                fit: BoxFit.fill,
+                height: mediaQuery.size.height * 0.36,
+                width: mediaQuery.size.width * 0.2,
               ),
             ),
           ),

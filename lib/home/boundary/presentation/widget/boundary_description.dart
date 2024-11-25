@@ -18,7 +18,7 @@ class BoundaryDescription extends StatelessWidget {
         Text(
           boundaryModel.title,
           style: const TextStyle(
-            color: ConstantColor.subTitleBlackShades,
+            color: StaticColors.subTitleBlackShades,
             fontSize: 20,
             fontFamily: 'Avenir LT Std',
             fontWeight: FontWeight.w400,
@@ -31,7 +31,7 @@ class BoundaryDescription extends StatelessWidget {
           boundaryModel.subTitle,
           style: const TextStyle(
               fontSize: 60,
-              color: ConstantColor.primaryColor,
+              color: StaticColors.appTheme_55B,
               fontWeight: FontWeight.w700),
         ),
         const SizedBox(

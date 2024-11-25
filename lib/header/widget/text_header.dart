@@ -36,7 +36,7 @@ class TextHeader extends StatelessWidget {
                 letterSpacing: 1.0,
                 fontWeight: FontWeight.w400,
                 fontFamily: 'Avenir LT Std',
-                color: ConstantColor.titleHeaderBlackColor,
+                color: StaticColors.titleHeaderBlackColor,
                 fontSize: 22),
           ),
         ),

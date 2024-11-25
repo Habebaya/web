@@ -1,8 +1,9 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
-class ConstantColor {
-  static const primaryColor = Color(0xFFF27922);
+class StaticColors {
+  static const appTheme_55B = Color(0xFFF27922);
+  static const appThemeB = Color(0xFFF7AF7A);
 
   static const backgroundColor = Colors.white;
   static const technologyBackgroundColor = Color(0xFFf6f6f6);

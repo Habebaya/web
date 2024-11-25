@@ -28,7 +28,7 @@ class DividerImage extends StatelessWidget {
                         TextSpan(
                           text: 'Developing',
                           style: TextStyle(
-                            color: ConstantColor.primaryColor,
+                            color: StaticColors.appTheme_55B,
                             fontSize: 60,
                             fontFamily: 'Avenir LT Std',
                             fontWeight: FontWeight.w700,
@@ -38,7 +38,7 @@ class DividerImage extends StatelessWidget {
                         TextSpan(
                           text: ' For a Purpose',
                           style: TextStyle(
-                            color: ConstantColor.whiteColor,
+                            color: StaticColors.whiteColor,
                             fontSize: 60,
                             fontFamily: 'Avenir LT Std',
                             fontWeight: FontWeight.w700,
@@ -57,7 +57,7 @@ class DividerImage extends StatelessWidget {
                       textAlign: TextAlign.center,
                       maxLines: 2,
                       style: TextStyle(
-                        color: ConstantColor.whiteColor,
+                        color: StaticColors.whiteColor,
                         fontSize: 20,
                         fontFamily: 'Avenir LT Std',
                         fontWeight: FontWeight.w300,

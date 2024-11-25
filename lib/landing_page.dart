@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/const/constants.dart';
 import 'package:turn_digital_dashboard_test/home/models/home_model.dart';
-import 'package:turn_digital_dashboard_test/home/offering/model/offering_model.dart';
 import 'package:turn_digital_dashboard_test/main_screen.dart';
 import 'package:lottie/lottie.dart';
 import 'package:http/http.dart' as http;
@@ -43,8 +42,7 @@ class _LandingPageState extends State<LandingPage> {
   }
 
   Future<HomeModel?> getHomePageContent() async {
-    const String url =
-        'https://dartfrog.azurewebsites.net/api/home/getHomePageContent';
+    const String url = 'https://dartfrog.azurewebsites.net/api/home/getHomePageContent';
 
     try {
       final response = await http.get(Uri.parse(url));
@@ -65,11 +63,11 @@ class _LandingPageState extends State<LandingPage> {
     return homeModel!;
   }
 
-  Future<void> fetchData1() async {
-    await Future.delayed(
-        const Duration(seconds: 2)); // Simulating API call delay
-    debugPrint("Data from API 1 fetched.");
-  }
+  // Future<void> fetchData1() async {
+  //   await Future.delayed(
+  //       const Duration(seconds: 2)); // Simulating API call delay
+  //   debugPrint("Data from API 1 fetched.");
+  // }
 
   @override
   Widget build(BuildContext context) {

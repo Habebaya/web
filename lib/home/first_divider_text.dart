@@ -18,7 +18,7 @@ class FirstDividerText extends StatelessWidget {
             "Developing For a\n Purpose",
             style: TextStyle(
               fontWeight: FontWeight.w400,
-              color: ConstantColor.primaryColor,
+              color: StaticColors.appTheme_55B,
               fontSize: 40,
             ),
             maxLines: 2,

@@ -17,7 +17,7 @@ class NavigatorBarItem extends StatelessWidget {
         Text(
           title.toUpperCase(),
           style: const TextStyle(
-            color: ConstantColor.blackColor,
+            color: StaticColors.blackColor,
             fontSize: 20,
             fontFamily: 'Avenir LT Std',
             fontWeight: FontWeight.w300,
@@ -29,7 +29,7 @@ class NavigatorBarItem extends StatelessWidget {
           width: 27,
           padding: EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: ConstantColor.primaryColor,
+            color: StaticColors.appTheme_55B,
             borderRadius: BorderRadius.circular(50)
           ),
         )
