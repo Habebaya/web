@@ -1,49 +1,78 @@
 import 'package:flutter/material.dart';
-import 'package:turn_digital_dashboard_test/const/color_constant.dart';
-import 'package:turn_digital_dashboard_test/header/header_video_embded.dart';
-import 'package:turn_digital_dashboard_test/header/widget/header_image.dart';
+import 'package:turn_digital_dashboard_test/const/constants.dart';
+import 'package:turn_digital_dashboard_test/header/model/header_model.dart';
+import 'package:turn_digital_dashboard_test/header/widget/rotating_wheel_header.dart';
 import 'package:turn_digital_dashboard_test/header/widget/text_header.dart';
 
 class Header extends StatelessWidget {
-  const Header({
-    super.key,
-  });
+  final HeaderModel? headerModel;
+
+  const Header({super.key, required this.headerModel});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-        width: MediaQuery.sizeOf(context).width,
-        height: MediaQuery.sizeOf(context).height,
-        child: Stack(
-          clipBehavior: Clip.none,
-          alignment: Alignment.center,
-          children: [
-            Opacity(opacity: 0.48, child: HeaderVideoEmbed()),
-            Opacity(
-              opacity: 0.9,
-              child: Container(color: StaticColors.whiteColor),
-            ),
-            const Positioned(
-              left: 60,
-              right: 60,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: TextHeader(
-                      title: "TurnDigital",
-                      subTitle: "TAILORING",
-                      subTitle1: "WEB<br>TECHNOLOGIES",
-                      description:
-                          "To achieve the enterprise objectives.Based on DXP,CMS,or Native,<br> custom solutions are crafted for extensibility, performance,security, and integrability with business applications.",
-                    ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: Constants.paddingHorizontal,
+        vertical: Constants.paddingVertical,
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          TextHeader(headerData: headerModel!),
+          Expanded(
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Opacity(
+                  opacity: 0.5,
+                  child: Image.asset(
+                    "assets/gif/header_waves.gif",
+                    width: MediaQuery.sizeOf(context).width * 0.4,
                   ),
-                   Expanded(child: HeaderImage()),
-                ],
-              ),
-            )
-          ],
-        ));
+                ),
+                Opacity(
+                  opacity: 0.5,
+                  child: Image.asset(
+                    "assets/gif/td_logo.gif",
+                    width: 78,
+                    height: 84,
+                  ),
+                ),
+                Image.asset(
+                  "assets/background/header_back_orange.png",
+                ),
+                const RotatingWheelHeader()
+              ],
+            ),
+          ),
+
+          // SizedBox(
+          //   child: Stack(
+          //     alignment: Alignment.center,
+          //     clipBehavior: Clip.none,
+          //     fit: StackFit.loose,
+          //     children: [
+          //       Positioned(
+          //         child: Image.asset(
+          //           "assets/gif/header_back.gif",
+          //           width: MediaQuery.sizeOf(context).width,
+          //         ),
+          //       ),
+          //       Positioned(
+          //         child: Image.asset(
+          //           "assets/background/header_back_orange.png",
+          //           width: MediaQuery.sizeOf(context).width,
+          //         ),
+          //       ),
+          //       // Image.asset("assets/background/header_back_orange.png"),
+          //       // const RotatingWheelHeader()
+          //     ],
+          //   ),
+          // )
+        ],
+      ),
+    );
   }
 }

@@ -47,6 +47,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
   video_player: ^2.9.2
+  better_player: ^0.0.84
   http: ^1.2.2
   flutter_html:
   flutter_svg: ^2.0.11
@@ -89,12 +90,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: MaterialIcons
-      fonts:
-        - asset: assets/fonts/MaterialIcons-Regular.otf
     - family: Avenir LT Std
       fonts:
         - asset: assets/fonts/avenir_book/avenir_font.ttf
+          weight: 700
 #          weight: 900
 #        - asset: assets/fonts/avenir_book/avenir_font.ttf
 #          weight: 400

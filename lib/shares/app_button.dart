@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:turn_digital_dashboard_test/const/color_constant.dart';
+
+import '../const/font_style.dart';
 
 class AppButton extends StatefulWidget {
-  double width;
-  double height;
-  Color buttonColor;
-  bool getInTouchButton;
+  final double width;
+  final double height;
+  final Color buttonColor;
+  final bool getInTouchButton;
+  final bool contactUs;
 
-  // Color hoverColor;
-  // Color hoverBorder;
-  String buttonTitle;
+  final String buttonTitle;
 
-  Function onPressed;
+  final Function onPressed;
 
-  AppButton(
-      {required this.width,
+  const AppButton(
+      {super.key,
+      required this.width,
       required this.height,
       required this.buttonColor,
       this.getInTouchButton = false,
-      // required this.hoverColor,
-      // required this.hoverBorder,
+      this.contactUs = false,
       required this.buttonTitle,
       required this.onPressed});
 
@@ -48,24 +50,44 @@ class _AppButtonState extends State<AppButton> {
           width: widget.width,
           height: widget.height,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
-            color: widget.buttonColor,
-            // _isHovered ? widget.hoverColor : widget.buttonColor,
-            // border: Border.all(color: widget.hoverBorder, width: 1.2)
-          ),
-          child: Center(
-            child: Text(
-              widget.buttonTitle,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: widget.getInTouchButton ? 16 : 20,
-                fontFamily: 'Avenir LT Std',
-                fontWeight:
-                    widget.getInTouchButton ? FontWeight.w600 : FontWeight.w700,
-                height: widget.getInTouchButton ? 0.11 : 0.08,
+              borderRadius: BorderRadius.circular(50),
+              color: _isHovered ? Colors.transparent : widget.buttonColor,
+              border: Border.all(color: StaticColors.primaryColor, width: 1.2)),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                widget.buttonTitle,
+                style: TextStyle(
+                  fontSize: widget.getInTouchButton ? 16 : 20,
+                  color: _isHovered ? widget.buttonColor : Colors.white,
+                  fontWeight: FontWeight.w700,
+                  fontFamily: 'Avenir LT Std',
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
+              if (!widget.contactUs) ...[
+                const SizedBox(
+                  width: 30,
+                ),
+                CircleAvatar(
+                  radius: 12,
+                  backgroundColor: _isHovered
+                      ? StaticColors.primaryColor
+                      : StaticColors.arrowIconColor,
+                  child: Center(
+                    child: Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      color: _isHovered
+                          ? StaticColors.arrowIconColor
+                          : StaticColors.primaryColor,
+                      size: 10,
+                    ),
+                  ),
+                )
+              ]
+            ],
           )),
     );
   }

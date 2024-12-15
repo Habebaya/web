@@ -3,6 +3,7 @@ import 'engagement_item_model.dart';
 
 class EngagementModel {
   int? count;
+  String? id;
   String? title;
   String? subtitle;
   String? description;
@@ -23,7 +24,7 @@ class EngagementModel {
     subtitle = json['data']['subtitle'];
     description = json['data']['description'];
 
-    buttonText = json['data']['buttonText'];
+    buttonText = json['data']['button_text'];
     engagements = List<EngagementItemModel>.from(json['data']['engagementItems']
         .map((x) => EngagementItemModel.fromJson(x)));
   }

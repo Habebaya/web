@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/const/color_constant.dart';
 import 'package:turn_digital_dashboard_test/const/responsive.dart';
 import '../../model/boundary_model.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class BoundaryDescription extends StatelessWidget {
-  BoundaryModel boundaryModel;
+  final BoundaryModel boundaryModel;
 
-  BoundaryDescription({super.key, required this.boundaryModel});
+  const BoundaryDescription({super.key, required this.boundaryModel});
 
   @override
   Widget build(BuildContext context) {
@@ -14,53 +15,55 @@ class BoundaryDescription extends StatelessWidget {
       crossAxisAlignment: Responsive.isDesktop(context)
           ? CrossAxisAlignment.start
           : CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          boundaryModel.title,
-          style: const TextStyle(
-            color: StaticColors.subTitleBlackShades,
-            fontSize: 20,
-            fontFamily: 'Avenir LT Std',
-            fontWeight: FontWeight.w400,
-          ),
+        Html(
+          shrinkWrap: true,
+          data: boundaryModel.title,
+          style: {
+            "p":Style(
+              fontSize: FontSize(30),
+              fontFamily: 'Avenir LT Std',
+              textAlign: TextAlign.start,
+              fontStyle: FontStyle.normal,
+            ),
+
+          },
         ),
-        const SizedBox(
-          height: 4,
+        Html(
+          shrinkWrap: true,
+          data: boundaryModel.subtitle,
+          style: {
+            "span":Style(
+              fontSize: FontSize(60),
+              fontFamily: 'Avenir LT Std',
+              textAlign: TextAlign.start,
+              fontStyle: FontStyle.normal,
+            ),
+            "h1": Style(
+              fontSize: FontSize(60),
+              fontFamily: 'Avenir LT Std',
+              textAlign: TextAlign.start,
+              fontStyle: FontStyle.normal,
+            ),
+
+          },
         ),
-        Text(
-          boundaryModel.subTitle,
-          style: const TextStyle(
-              fontSize: 60,
-              color: StaticColors.appTheme_55B,
-              fontWeight: FontWeight.w700),
-        ),
-        const SizedBox(
-          height: 24,
-        ),
-        Text.rich(
-          TextSpan(
-            children: [
-              TextSpan(
-                text: boundaryModel.description,
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontFamily: 'Avenir LT Std',
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              TextSpan(
-                text: boundaryModel.longDescription,
-                style: const TextStyle(
-                  color: Color(0xFF565656),
-                  fontSize: 20,
-                  fontFamily: 'Avenir LT Std',
-                  fontWeight: FontWeight.w300,
-                  height: 0,
-                ),
-              ),
-            ],
-          ),
+
+        Html(
+          data: boundaryModel.description,
+          style: {
+            "p": Style(
+              fontSize: FontSize(24),
+              fontFamily: 'Avenir LT Std',
+              textAlign: TextAlign.start,
+            ),
+            "div": Style(
+              fontSize: FontSize(24),
+              fontFamily: 'Avenir LT Std',
+              textAlign: TextAlign.start,
+            ),
+          },
         )
       ],
     );

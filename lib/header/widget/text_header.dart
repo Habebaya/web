@@ -1,80 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
-
+import 'package:turn_digital_dashboard_test/shares/app_button.dart';
 import '../../const/color_constant.dart';
+import '../../const/html_text.dart';
+import '../model/header_model.dart';
 
 class TextHeader extends StatelessWidget {
-  final String? title;
-  final String? subTitle;
-  final String? subTitle1;
-
-  final String? description;
-
-  final bool? isOffering;
-
-  const TextHeader({
-    super.key,
-    required this.title,
-    required this.subTitle,
-    this.subTitle1,
-    required this.description,
-    this.isOffering = false,
-  });
+  final HeaderModel? headerData;
+  const TextHeader({super.key, required this.headerData,});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 8.0,bottom: 10),
-          child: Text(
-            title!,
+    return SizedBox(
+      width: MediaQuery.sizeOf(context).width * 0.45,
+      // height: MediaQuery.sizeOf(context).height * 0.7,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Text(
+            "Seamlessly",
             textAlign: TextAlign.start,
-            style: const TextStyle(
-                letterSpacing: 1.0,
-                fontWeight: FontWeight.w400,
-                fontFamily: 'Avenir LT Std',
-                color: StaticColors.titleHeaderBlackColor,
-                fontSize: 22),
+            style: TextStyle(
+              color: StaticColors.titleHeaderBlackColor,
+              fontWeight: FontWeight.w400,
+              fontSize: 40,
+              fontFamily: 'Avenir LT Std',
+            ),
           ),
-        ),
+          const SizedBox(
+            height: 20,
+          ),
+          HtmlText(
+            width:  MediaQuery.sizeOf(context).width * 0.5,
 
-        Html(
-          shrinkWrap: true,
-          data: '''
-          <span style="color: #F27922;  font-weight: 700;">${subTitle} </span>
-          <span style="color: #000000; font-weight: 700; ">${subTitle1}</span>
-        ''',
-          style: {
-            "span": Style(
-              textAlign: TextAlign.start,
-              fontFamily: 'Avenir LT Std',
-              fontSize: FontSize(75.0),
-              lineHeight: const LineHeight(1.0), // Adjusts line height to approximate `height: 0`
-            ),
-          },
-        ),
-        Html(
-          shrinkWrap: true,
-          data: '''
-          <p style="color: #565656;font-weight: 400; ">${description}</p>
-        ''',
-          style: {
-            "p": Style(
-              textAlign: TextAlign.start,
-              // Aligns the entire text block to the start
-
-              fontFamily: 'Avenir LT Std',
-              fontSize: FontSize(20.0),
-              // Sets the font size
-              lineHeight: const LineHeight(
-                  1.0), // Adjusts line height to approximate `height: 0`
-            ),
-          },
-        ),
-      ],
+            data: headerData!.title!,
+            fontSize: 70,
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          HtmlText(
+            width:  MediaQuery.sizeOf(context).width * 0.3,
+            data: headerData!.subtitle!,
+            fontSize: 18,
+          ),
+          const SizedBox(
+            height: 70,
+          ),
+          AppButton(
+            getInTouchButton: false,
+            width: MediaQuery.sizeOf(context).width * 0.23,
+            height: 52,
+            buttonTitle: headerData!.buttonText!,
+            buttonColor: StaticColors.primaryColor,
+            onPressed: () {},
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:turn_digital_dashboard_test/const/constants.dart';
+import 'package:turn_digital_dashboard_test/home/engagement/models/engagement_model.dart';
 import 'package:turn_digital_dashboard_test/shares/section_title.dart';
 import 'package:turn_digital_dashboard_test/shares/app_button.dart';
 
@@ -8,11 +9,14 @@ import '../models/home_model.dart';
 import 'engagement_item.dart';
 
 class Engagement extends StatelessWidget {
-  final HomeModel? engagementContent;
-  final bool useDummy;
+  final EngagementModel? engagementContent;
 
-  const Engagement(
-      {super.key, required this.engagementContent, this.useDummy = false});
+  // final bool useDummy;
+
+  const Engagement({
+    super.key,
+    required this.engagementContent,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,23 +34,21 @@ class Engagement extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 SectionTitle(
-                    title: engagementContent!.engagementModel!.title!,
-                    description: engagementContent!.engagementModel!.subtitle!),
+                    title: engagementContent!.title!,
+                    subTitle: engagementContent!.subtitle!),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
-                  children: engagementContent!.engagementModel!.engagements!
-                      .map((item) {
+                  children: engagementContent!.engagements!.map((item) {
                     return EngagementItem(engagementItem: item);
                   }).toList(),
                 ),
                 AppButton(
-                  width: MediaQuery.sizeOf(context).width * 0.2,
-                  height: 56,
-                  buttonTitle:
-                      engagementContent!.engagementModel!.buttonText!,
-                  buttonColor: StaticColors.appTheme_55B,
+                  width:322,
+                  height: 52,
+                  buttonTitle: engagementContent!.buttonText!,
+                  buttonColor: StaticColors.primaryColor,
                   onPressed: () {},
                 ),
               ],

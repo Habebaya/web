@@ -1,11 +1,14 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:turn_digital_dashboard_test/const/api_response.dart';
+import 'package:turn_digital_dashboard_test/const/color_constant.dart';
 import 'package:turn_digital_dashboard_test/const/constants.dart';
 import 'package:turn_digital_dashboard_test/home/models/home_model.dart';
 import 'package:turn_digital_dashboard_test/main_screen.dart';
 import 'package:lottie/lottie.dart';
 import 'package:http/http.dart' as http;
+import 'package:turn_digital_dashboard_test/service/home_service.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -16,7 +19,7 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   final bool _isLoading = true;
-  HomeModel? homeModel;
+  ApiResponse? homeModel;
 
   @override
   void initState() {
@@ -28,12 +31,12 @@ class _LandingPageState extends State<LandingPage> {
     try {
       await Future.wait([
         getHomePageContent(),
-        //fetchData1(),
+         // fetchData1(),
       ]);
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
             builder: (context) => MainScreen(
-                  homeModel: homeModel!,
+                  homeModel: homeModel!.data!,
                 )),
       );
     } catch (e) {
@@ -41,21 +44,21 @@ class _LandingPageState extends State<LandingPage> {
     }
   }
 
-  Future<HomeModel?> getHomePageContent() async {
-    const String url = 'https://dartfrog.azurewebsites.net/api/home/getHomePageContent';
+  Future<ApiResponse?> getHomePageContent() async {
+    const String url = 'http://api.td-dev.turndigital.net:7070/api/public/home/getHomePageContent';
 
     try {
       final response = await http.get(Uri.parse(url));
       debugPrint('Status Code : ${response.statusCode}');
 
       if (response.statusCode == 200) {
-        final decodedData = jsonDecode(response.body);
+        final  decodedData = await jsonDecode(response.body);
         debugPrint('DecodedData: $decodedData');
 
-        return homeModel = HomeModel.fromJson(decodedData);
+        return homeModel = ApiResponse.fromJson(decodedData);
       } else {
         debugPrint('Failed to load data. Status code: ${response.statusCode}');
-        return homeModel = Constants.defaultHomeData;
+
       }
     } catch (e) {
       debugPrint('Error: $e');
@@ -63,23 +66,21 @@ class _LandingPageState extends State<LandingPage> {
     return homeModel!;
   }
 
-  // Future<void> fetchData1() async {
+  // Future<HomeModel> fetchData1() async {
   //   await Future.delayed(
   //       const Duration(seconds: 2)); // Simulating API call delay
   //   debugPrint("Data from API 1 fetched.");
+  //   return homeModel = Constants.defaultHomeData;
+  //
   // }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Center(
           child: _isLoading
-              ? Lottie.asset(
-                  'assets/lottie/loading.json',
-                  width: 200,
-                  height: 200,
-                  fit: BoxFit.fill,
-                )
+              ?  Lottie.asset("assets/lottie/loading.json",height: 150,width: 150)
               : const SizedBox.shrink()),
     );
   }

@@ -5,14 +5,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../const/color_constant.dart';
 
 class SectionTitle extends StatelessWidget {
-final  String? title;
- final String? description;
+  final String? title;
+  final String? subTitle;
   final bool? isOffering;
 
- const  SectionTitle({
+  const SectionTitle({
     super.key,
     required this.title,
-    required this.description,
+    required this.subTitle,
     this.isOffering = false,
   });
 
@@ -28,7 +28,8 @@ final  String? title;
               child: Text(
                 title!,
                 style: const TextStyle(
-                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Avenir LT Std',
+                    fontWeight: FontWeight.bold,
                     color: StaticColors.blackColor,
                     fontSize: 50),
               ),
@@ -40,7 +41,8 @@ final  String? title;
                 Text(
                   title!,
                   style: const TextStyle(
-                      fontWeight: FontWeight.w700,
+                      fontFamily: 'Avenir LT Std',
+                      fontWeight: FontWeight.bold,
                       color: StaticColors.blackColor,
                       fontSize: 50),
                 ),
@@ -53,10 +55,28 @@ final  String? title;
           SizedBox(
             height: isOffering! ? 5 : 16,
           ),
-          Html(
-            shrinkWrap: true,
-            data: description,
-          )
+          subTitle!.trim().startsWith("<div>")
+              ? Html(
+                  shrinkWrap: true,
+                  data: subTitle,
+                  style: {
+                    "body": Style(
+                      fontSize: FontSize(24),
+                      // Font size 60
+                      fontFamily: 'Avenir LT Std',
+                      // Custom font family
+                      textAlign: TextAlign.center,
+                      fontStyle: FontStyle.normal,
+                    ),
+                  },
+                )
+              : Text(
+                  subTitle!,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Avenir LT Std',
+                      fontSize: 18),
+                ),
         ]);
   }
 }

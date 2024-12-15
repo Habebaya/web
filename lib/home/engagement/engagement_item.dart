@@ -28,12 +28,12 @@ class EngagementItem extends StatelessWidget {
                 height: 57.60,
                 padding: const EdgeInsets.all(12),
                 decoration: ShapeDecoration(
-                  color: StaticColors.appTheme_55B.withOpacity(0.2),
+                  color: StaticColors.primaryColor.withOpacity(0.2),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(48),
                   ),
                 ),
-                child: SvgPicture.asset(engagementItem.logo!),
+                child: SvgPicture.network(engagementItem.image!),
               ),
               const SizedBox(
                 height: 12,

@@ -1,16 +1,59 @@
 import 'package:flutter/cupertino.dart';
-import 'package:turn_digital_dashboard_test/home/Services/model/service_item_model.dart';
-import 'package:turn_digital_dashboard_test/home/Services/model/service_model.dart';
+
 import 'package:turn_digital_dashboard_test/home/engagement/models/engagement_item_model.dart';
 import 'package:turn_digital_dashboard_test/home/offering/model/offering_item_model.dart';
 
+import '../footer/models/foaterr_content_model.dart';
+import '../footer/models/footer_model.dart';
 import '../home/engagement/models/engagement_model.dart';
-import '../home/footer/models/foaterr_content_model.dart';
-import '../home/footer/models/footer_model.dart';
 import '../home/models/home_model.dart';
 import '../home/offering/model/offering_model.dart';
+import '../home/services_section/model/service_item_model.dart';
+import '../home/services_section/model/service_model.dart';
 
 class Constants {
+  static const baseUrl = 'http://api.td-dev.turndigital.net:7070/api/public/';
+  static const getHomeContent = "home/getHomePageContent";
+
+  static const paddingHorizontal = 60.0;
+  static const paddingVertical = 50.0;
+  static const spaceBetweenSections = SizedBox(height: 25.0);
+
+  static List<Widget> headerRoundedImageUrls = [
+    Image.asset(
+      "assets/one.png",
+      width: 230,
+      height: 180,
+    ),
+    Image.asset(
+      "assets/two.png",
+      width: 159,
+      height: 149,
+    ),
+     Image.asset(
+      "assets/three.png",
+      width: 300,
+      height: 100,
+    ),
+     Image.asset(
+      "assets/four.png",
+       width: 230,
+       height: 230,
+    ),
+     Image.asset(
+      "assets/five.png",
+      width: 300,
+      height: 300,
+    ),
+
+     Image.asset(
+      "assets/six.png",
+     width: 317,
+     height: 100,
+    ),
+
+  ];
+
   static List<FooterModel> footer = [
     FooterModel(title: "Home", isMainTitle: true, subTitles: [
       FooterContentModel(isMainTitle: false, subTitle: "Services"),
@@ -53,12 +96,12 @@ class Constants {
   static List<EngagementItemModel> engagement = [
     EngagementItemModel(
         title: "Project as a service\n(Preferred)",
-        logo: "assets/icon/preferred.svg",
+        image: "assets/icon/preferred.svg",
         subtitle: ""),
     EngagementItemModel(
-        title: "Managed Teams\n", logo: "assets/icon/managed_teams.svg"),
+        title: "Managed Teams\n", image: "assets/icon/managed_teams.svg"),
     EngagementItemModel(
-        title: "Extend Teams\n", logo: "assets/icon/extend_teams.svg"),
+        title: "Extend Teams\n", image: "assets/icon/extend_teams.svg"),
   ];
 
   static List<String> offering = [
@@ -72,37 +115,36 @@ class Constants {
   ];
 
   static HomeModel defaultHomeData = HomeModel(
-      success: true,
       serviceModel: dummyServiceData,
       offeringModel: dummyOfferingData,
       engagementModel: dummyEngagementData);
 
-  static ServiceModel dummyServiceData = ServiceModel(
+  static ServiceSectionModel dummyServiceData = ServiceSectionModel(
       title: "Services",
       subtitle:
           "TurnDigital services cover all stages of the business life cycle mapped to the enterprise's challenges and needs.",
-      homeButtonText: "Discover",
+      buttonText: "Discover",
       services: [
         ServiceItemModel(
-            serviceTitle: "Define",
-            serviceDesc:
+            title: "Define",
+            description:
                 "TurnDigital Plan & Design the best-fit actions to meet the business challenge",
-            serviceImg: "assets/icon/define.svg"),
+            image: "assets/icon/define.svg"),
         ServiceItemModel(
-            serviceTitle: "Craft",
-            serviceDesc:
+            title: "Craft",
+            description:
                 "TurnDigital Plan & Design the best-fit actions to meet the business challenge",
-            serviceImg: "assets/icon/craft.svg"),
+            image: "assets/icon/craft.svg"),
         ServiceItemModel(
-            serviceTitle: "Run",
-            serviceDesc:
+            title: "Run",
+            description:
                 "TurnDigital Plan & Design the best-fit actions to meet the business challenge",
-            serviceImg: "assets/icon/run.svg"),
+            image: "assets/icon/run.svg"),
         ServiceItemModel(
-            serviceTitle: "Optimize",
-            serviceDesc:
+            title: "Optimize",
+            description:
                 "TurnDigital Plan & Design the best-fit actions to meet the business challenge",
-            serviceImg: "assets/icon/optimize.svg"),
+            image: "assets/icon/optimize.svg"),
       ]);
 
   static OfferingModel dummyOfferingData = OfferingModel(
@@ -110,7 +152,7 @@ class Constants {
       subtitle: "UX designed for matchmaking enterprise objectives to"
           "every human (customers, or staff) and implemented to "
           "a web platform responding in a blink of an eye.",
-      homeButtonText: "Discover",
+      buttonText: "Discover",
       offerings: [
         OfferingItemModel(
             title: Constants.offering[0],
