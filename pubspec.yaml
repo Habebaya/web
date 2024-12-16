@@ -71,6 +71,7 @@ flutter:
     - assets/icon/
     - assets/gif/
     - assets/background/
+    - assets/header_icon/
     - assets/aws.webp
     - assets/video/
     - assets/lottie/

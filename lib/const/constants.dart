@@ -1,4 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:turn_digital_dashboard_test/header/widget/wheel/fifth_wheel_widget.dart';
+import 'package:turn_digital_dashboard_test/header/widget/wheel/first_right_wheel_widget.dart';
+import 'package:turn_digital_dashboard_test/header/widget/wheel/second_right_wheel_widget.dart';
+import 'package:turn_digital_dashboard_test/header/widget/wheel/top_wheel_widget.dart';
 
 import 'package:turn_digital_dashboard_test/home/engagement/models/engagement_item_model.dart';
 import 'package:turn_digital_dashboard_test/home/offering/model/offering_item_model.dart';
@@ -20,31 +24,35 @@ class Constants {
   static const spaceBetweenSections = SizedBox(height: 25.0);
 
   static List<Widget> headerRoundedImageUrls = [
-    Image.asset(
-      "assets/one.png",
-      width: 230,
-      height: 180,
-    ),
-    Image.asset(
-      "assets/two.png",
-      width: 159,
-      height: 149,
-    ),
-     Image.asset(
-      "assets/three.png",
-      width: 300,
-      height: 100,
-    ),
+    TopWheelWidget(),
+    // Image.asset(
+    //   "assets/one.png",
+    //   width: 230,
+    //   height: 180,
+    // ),
+    // Image.asset(
+    //   "assets/two.png",
+    //   width: 159,
+    //   height: 149,
+    // ),
+    FirstRightWheel(),
+    SecondRightWheel(),
+    //  Image.asset(
+    //   "assets/three.png",
+    //   width: 300,
+    //   height: 100,
+    // ),
      Image.asset(
       "assets/four.png",
        width: 230,
        height: 230,
     ),
-     Image.asset(
-      "assets/five.png",
-      width: 300,
-      height: 300,
-    ),
+    FifthRightWheel(),
+    //  Image.asset(
+    //   "assets/five.png",
+    //   width: 300,
+    //   height: 300,
+    // ),
 
      Image.asset(
       "assets/six.png",
