@@ -41,12 +41,16 @@ class _ServiceTileState extends State<ServiceTile> {
         // Smooth easing curve for the animation
         margin: const EdgeInsetsDirectional.only(end: 10),
         width: MediaQuery.sizeOf(context).width * 0.23,
-        height: MediaQuery.sizeOf(context).height * 0.431,
+        height: MediaQuery.sizeOf(context).height * 0.5,
         clipBehavior: Clip.hardEdge,
         padding: const EdgeInsets.all(30),
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
-            side: const BorderSide(width: 1, color: StaticColors.borderColor),
+            side:  BorderSide(
+                width: 1,
+                color: isHovered
+                    ? StaticColors.primaryColor
+                    : StaticColors.borderColor),
             borderRadius: BorderRadius.circular(283),
           ),
         ),
@@ -60,9 +64,7 @@ class _ServiceTileState extends State<ServiceTile> {
                 backgroundColor: isHovered
                     ? StaticColors.primaryColor
                     : StaticColors.lightPrimaryColor.withOpacity(0.5),
-                child:
-
-                SvgPicture.network(
+                child: SvgPicture.network(
                   widget.serviceItem.image!,
                   height: 35,
                   width: 35,
@@ -73,8 +75,7 @@ class _ServiceTileState extends State<ServiceTile> {
                         : StaticColors.primaryColor,
                     BlendMode.srcIn,
                   ),
-                )
-                ),
+                )),
             Container(
                 width: 33,
                 padding: const EdgeInsets.all(1.5),
@@ -172,8 +173,13 @@ class CircleBorderPainter extends CustomPainter {
     }
   }
 
+
+
+
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
     return true; // Repaint whenever isHovered changes
   }
 }
+
+

@@ -45,7 +45,7 @@ class _LandingPageState extends State<LandingPage> {
   }
 
   Future<ApiResponse?> getHomePageContent() async {
-    const String url = 'http://api.td-dev.turndigital.net:7070/api/public/home/getHomePageContent';
+    const String url = 'http://api.td-dev.turndigital.net/api/public/home/getHomePageContent';
 
     try {
       final response = await http.get(Uri.parse(url));

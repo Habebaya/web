@@ -24,35 +24,35 @@ class Constants {
   static const spaceBetweenSections = SizedBox(height: 25.0);
 
   static List<Widget> headerRoundedImageUrls = [
-    TopWheelWidget(),
-    // Image.asset(
-    //   "assets/one.png",
-    //   width: 230,
-    //   height: 180,
-    // ),
-    // Image.asset(
-    //   "assets/two.png",
-    //   width: 159,
-    //   height: 149,
-    // ),
-    FirstRightWheel(),
-    SecondRightWheel(),
-    //  Image.asset(
-    //   "assets/three.png",
-    //   width: 300,
-    //   height: 100,
-    // ),
+    // TopWheelWidget(),
+    Image.asset(
+      "assets/one.png",
+      width: 230,
+      height: 180,
+    ),
+    Image.asset(
+      "assets/two.png",
+      width: 159,
+      height: 149,
+    ),
+    // FirstRightWheel(),
+    // SecondRightWheel(),
+     Image.asset(
+      "assets/three.png",
+      width: 300,
+      height: 100,
+    ),
      Image.asset(
       "assets/four.png",
        width: 230,
        height: 230,
     ),
-    FifthRightWheel(),
-    //  Image.asset(
-    //   "assets/five.png",
-    //   width: 300,
-    //   height: 300,
-    // ),
+    // FifthRightWheel(),
+     Image.asset(
+      "assets/five.png",
+      width: 300,
+      height: 300,
+    ),
 
      Image.asset(
       "assets/six.png",
